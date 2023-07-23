@@ -1,15 +1,9 @@
 def max_pairwise_product(numbers):
-    n = len(numbers)
-    max_product = 0
-    for first in range(n):
-        for second in range(first + 1, n):
-            max_product = max(max_product,
-                numbers[first] * numbers[second])
-
-    return max_product
+    sorted_numbers = sorted(numbers, reverse=True)
+    return sorted_numbers[0] * sorted_numbers[1]
 
 
 if __name__ == '__main__':
-    _ = int(input())
+    _ = input()
     input_numbers = list(map(int, input().split()))
     print(max_pairwise_product(input_numbers))
